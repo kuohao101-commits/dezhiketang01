@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>得知课堂｜加拿大本科辅导与英国学业规划</title>
+  <meta name="keywords" content="得知课堂,加拿大本科辅导,英国学业规划,多伦多大学辅导,UBC辅导,滑铁卢辅导,G5申请规划,牛剑笔试面试,国际竞赛辅导" />
+  <meta name="description" content="得知课堂专注加拿大本科辅导与英国学业规划，提供选课规划、暑期先修、课程辅导、GPA提升、督学陪跑、英国G5申请规划、国际竞赛辅导与牛剑笔试面试辅导。" />
+
+  <style>
+    :root{
+      --brand:#1f4fa3;
+      --brand-dark:#102f72;
+      --brand-light:#eaf3ff;
+      --brand-soft:#f5f9ff;
+      --accent:#ff8a00;
+      --text:#111827;
+      --muted:#667085;
+      --line:#dbe7fb;
+      --shadow:0 18px 45px rgba(15,45,105,.14);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1280px,calc(100% - 44px));margin:0 auto}
+
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(255,255,255,.82);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.36);
+      transition:.25s;
+    }
+    .topbar.scrolled{
+      background:rgba(255,255,255,.96);
+      box-shadow:0 12px 35px rgba(15,45,105,.08);
+    }
+    .nav{
+      height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      min-width:220px;
+      height:74px;
+    }
+    .brand-logo{
+      height:54px;
+      width:auto;
+      object-fit:contain;
+      display:block;
+    }
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:30px;
+      font-size:15px;
+      color:#1f2937;
+      white-space:nowrap;
+    }
+    .menu a{
+      position:relative;
+      padding:25px 0;
+    }
+    .menu a:after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:13px;
+      height:3px;
+      background:var(--accent);
+      transform:scaleX(0);
+      transition:.25s;
+      transform-origin:center;
+    }
+    .menu a:hover{
+      color:var(--brand);
+    }
+    .menu a:hover:after{
+      transform:scaleX(1);
+    }
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      padding:12px 24px;
+      font-weight:800;
+      transition:.25s;
+      cursor:pointer;
+      border:0;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--brand),#2274e8);
+      color:#fff;
+      box-shadow:0 14px 30px rgba(31,79,163,.28);
+    }
+    .btn-secondary{
+      background:#fff;
+      color:var(--brand);
+      border:1px solid var(--line);
+    }
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:stretch;
+      overflow:hidden;
+      background:#0b1d3f;
+    }
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+      background:#0b1d3f;
+    }
+    .hero-slide{
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      opacity:0;
+      transform:scale(1.03);
+      animation:heroSlider 12s ease-in-out infinite;
+    }
+    .hero-slide:nth-child(1){
+      background-image:url('assets/hero-certificate.png');
+      opacity:1;
+    }
+    .hero-slide:nth-child(2){
+      background-image:url('assets/hero-forbes.jpg');
+      animation-delay:6s;
+    }
+    .hero-bg:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:2;
+      background:
+        linear-gradient(90deg,rgba(7,21,52,.82) 0%,rgba(7,21,52,.62) 45%,rgba(7,21,52,.24) 100%),
+        linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.30) 100%);
+    }
+    .hero-bg:after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-1px;
+      height:20%;
+      z-index:3;
+      background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(245,249,255,.76) 68%,#f5f9ff 100%);
+    }
+    @keyframes heroSlider{
+      0%{opacity:0;transform:scale(1.03)}
+      8%{opacity:1;transform:scale(1.035)}
+      46%{opacity:1;transform:scale(1.07)}
+      56%{opacity:0;transform:scale(1.075)}
+      100%{opacity:0;transform:scale(1.03)}
+    }
+    .hero-inner{
+      position:relative;
+      z-index:4;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding-top:90px;
+      padding-bottom:90px;
+    }
+    .hero-copy{
+      max-width:900px;
+      color:#fff;
+    }
+    .eyebrow{
+      display:inline-flex;
+      background:rgba(255,255,255,.16);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:999px;
+      padding:8px 15px;
+      font-size:14px;
+      font-weight:800;
+      margin-bottom:26px;
+      backdrop-filter:blur(12px);
+    }
+    .hero h1{
+      font-size:clamp(44px,5.4vw,82px);
+      line-height:1.05;
+      letter-spacing:-.055em;
+      margin-bottom:24px;
+      font-weight:950;
+    }
+    .hero h1 span{
+      display:block;
+      color:#8fc4ff;
+      white-space:nowrap;
+    }
+    .hero p{
+      font-size:20px;
+      color:rgba(255,255,255,.84);
+      max-width:820px;
+      margin-bottom:34px;
+    }
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .hero .btn-secondary{
+      background:rgba(255,255,255,.92);
+    }
+    .hero-side-label{
+      position:absolute;
+      right:7vw;
+      top:35%;
+      z-index:4;
+      color:rgba(255,255,255,.16);
+      font-size:110px;
+      font-weight:900;
+      letter-spacing:-.06em;
+      writing-mode:vertical-rl;
+      pointer-events:none;
+    }
+
+    section{padding:90px 0}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:30px;
+      margin-bottom:38px;
+    }
+    .section-kicker{
+      color:var(--brand);
+      font-weight:900;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+      font-size:13px;
+      margin-bottom:8px;
+    }
+    .section-title{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.15;
+      letter-spacing:-.03em;
+    }
+    .section-desc{
+      color:var(--muted);
+      max-width:650px;
+    }
+    .uk-services-head{
+      grid-template-columns:auto minmax(360px,1fr);
+      align-items:center;
+    }
+    .uk-services-title-wrap{
+      min-width:max-content;
+    }
+    .uk-services-head .section-title{
+      white-space:nowrap;
+      font-size:clamp(34px,3.35vw,48px);
+    }
+    .uk-services-head .section-desc{
+      max-width:620px;
+      line-height:1.8;
+    }
+
+    .capabilities{
+      background:#f5f9ff;
+      padding:110px 0;
+    }
+    .capabilities-grid{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:50px;
+      align-items:center;
+    }
+    .capabilities-copy{
+      max-width:560px;
+    }
+    .capabilities-copy .section-title{
+      margin-bottom:24px;
+    }
+    .capabilities-copy p{
+      color:var(--muted);
+      font-size:17px;
+      line-height:2;
+      margin-bottom:16px;
+    }
+    .capabilities-cards{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+    .cap-card{
+      position:relative;
+      min-height:210px;
+      border-radius:28px;
+      padding:30px 32px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 18px 45px rgba(15,45,105,.10);
+      overflow:hidden;
+      transition:.25s;
+    }
+    .cap-card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow);
+    }
+    .cap-card:after{
+      content:"";
+      position:absolute;
+      right:-52px;
+      bottom:-52px;
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      background:rgba(31,79,163,.07);
+    }
+    .cap-icon{
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      background:linear-gradient(135deg,var(--brand),#5ba7ff);
+      margin-bottom:22px;
+      position:relative;
+      z-index:1;
+    }
+    .cap-icon.clock:before{
+      content:"";
+      position:absolute;
+      width:20px;
+      height:20px;
+      border:3px solid #fff;
+      border-radius:50%;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+    }
+    .cap-icon.clock:after{
+      content:"";
+      position:absolute;
+      width:9px;
+      height:3px;
+      background:#fff;
+      left:23px;
+      top:23px;
+      transform-origin:left center;
+      transform:rotate(-45deg);
+      border-radius:99px;
+    }
+    .cap-icon.people:before,
+    .cap-icon.people:after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      background:#fff;
+    }
+    .cap-icon.people:before{
+      width:14px;
+      height:14px;
+      left:16px;
+      top:10px;
+    }
+    .cap-icon.people:after{
+      width:26px;
+      height:12px;
+      left:10px;
+      bottom:10px;
+      border-radius:14px 14px 8px 8px;
+    }
+    .cap-icon.trend:before{
+      content:"";
+      position:absolute;
+      width:24px;
+      height:16px;
+      border-left:3px solid #fff;
+      border-bottom:3px solid #fff;
+      left:11px;
+      top:15px;
+    }
+    .cap-icon.trend:after{
+      content:"";
+      position:absolute;
+      width:16px;
+      height:16px;
+      border-top:3px solid #fff;
+      border-right:3px solid #fff;
+      right:11px;
+      top:12px;
+      transform:rotate(0deg);
+    }
+    .cap-icon.cap:before{
+      content:"";
+      position:absolute;
+      width:26px;
+      height:16px;
+      background:#fff;
+      left:10px;
+      top:15px;
+      clip-path:polygon(50% 0,100% 35%,50% 70%,0 35%);
+    }
+    .cap-icon.cap:after{
+      content:"";
+      position:absolute;
+      width:18px;
+      height:6px;
+      background:#fff;
+      left:14px;
+      top:27px;
+      border-radius:0 0 10px 10px;
+    }
+    .cap-number{
+      position:relative;
+      z-index:1;
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      color:var(--brand);
+      margin-bottom:18px;
+      white-space:nowrap;
+      line-height:1;
+    }
+    .cap-number .main{
+      font-size:42px;
+      font-weight:950;
+      letter-spacing:-.04em;
+    }
+    .cap-number .unit{
+      font-size:24px;
+      font-weight:950;
+    }
+    .cap-card-label{
+      position:relative;
+      z-index:1;
+      display:block;
+      color:#344054;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .program-hero{
+      position:relative;
+      min-height:620px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      overflow:hidden;
+      background:#102f72;
+    }
+    .program-hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      transform:scale(1.02);
+    }
+    .program-hero.canada:before{
+      background-image:url('assets/canada-city.jpg');
+    }
+    .program-hero.uk:before{
+      background-image:url('assets/uk-city.jpg');
+    }
+    .program-hero:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(11,28,64,.74) 0%,rgba(11,28,64,.46) 45%,rgba(11,28,64,.10) 100%),
+        linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.20));
+    }
+    .program-hero-content{
+      position:relative;
+      z-index:2;
+      max-width:790px;
+    }
+    .program-hero h2{
+      font-size:clamp(46px,5vw,78px);
+      line-height:1.05;
+      letter-spacing:-.05em;
+      margin-bottom:22px;
+      font-weight:950;
+      white-space:nowrap;
+    }
+    .program-hero p{
+      font-size:20px;
+      color:rgba(255,255,255,.88);
+      max-width:760px;
+    }
+    .program-labels{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:26px;
+    }
+    .program-labels span{
+      border:1px solid rgba(255,255,255,.34);
+      background:rgba(255,255,255,.16);
+      backdrop-filter:blur(10px);
+      color:#fff;
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .program-detail{
+      background:#fff;
+      padding:88px 0;
+    }
+    .program-detail.soft{
+      background:#f5f9ff;
+    }
+    .service-cards{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:16px;
+    }
+    .biz-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      min-height:300px;
+      box-shadow:0 14px 34px rgba(31,79,163,.07);
+      position:relative;
+      overflow:hidden;
+      transition:.25s;
+    }
+    .program-detail.soft .biz-card{
+      background:linear-gradient(180deg,#fff,#f9fbff);
+    }
+    .biz-card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow);
+    }
+    .biz-card:after{
+      content:"";
+      position:absolute;
+      width:130px;
+      height:130px;
+      right:-50px;
+      bottom:-50px;
+      border-radius:50%;
+      background:rgba(31,79,163,.06);
+    }
+    .biz-card .num{
+      color:var(--brand);
+      font-weight:950;
+      margin-bottom:18px;
+      font-size:14px;
+    }
+    .biz-card h3{
+      font-size:22px;
+      margin-bottom:14px;
+      letter-spacing:-.02em;
+    }
+    .biz-card ul{
+      list-style:none;
+      display:grid;
+      gap:9px;
+      color:#475467;
+      font-size:14px;
+      position:relative;
+      z-index:1;
+    }
+    .biz-card li{
+      position:relative;
+      padding-left:14px;
+    }
+    .biz-card li:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.72em;
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:var(--brand);
+    }
+
+    .faq-section{
+      padding-top:58px;
+    }
+    .faq-layout{
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+      gap:34px;
+      align-items:start;
+    }
+    .faq-copy{
+      background:linear-gradient(145deg,var(--brand-dark),var(--brand));
+      color:#fff;
+      border-radius:26px;
+      padding:34px;
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:100px;
+    }
+    .faq-copy h3{
+      font-size:30px;
+      line-height:1.2;
+      margin-bottom:14px;
+    }
+    .faq-copy p{
+      color:rgba(255,255,255,.78);
+      font-size:15px;
+    }
+    .faq-list{
+      display:grid;
+      gap:12px;
+    }
+    .faq-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 12px 28px rgba(31,79,163,.06);
+    }
+    .faq-question{
+      width:100%;
+      border:0;
+      background:#fff;
+      padding:18px 20px;
+      text-align:left;
+      cursor:pointer;
+      font-size:16px;
+      font-weight:900;
+      color:#1f2937;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+    }
+    .faq-question span{
+      color:var(--brand);
+      font-weight:950;
+    }
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .28s ease;
+      background:#fbfdff;
+    }
+    .faq-answer p{
+      color:var(--muted);
+      padding:0 20px 18px;
+      font-size:15px;
+    }
+    .faq-item.active .faq-answer{
+      max-height:180px;
+    }
+
+
+    .mentors{
+      background:#fff;
+      overflow:hidden;
+    }
+    .mentor-groups{
+      display:grid;
+      gap:34px;
+      min-width:0;
+    }
+    .mentor-group{
+      display:grid;
+      gap:16px;
+      min-width:0;
+    }
+    .mentor-group-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .mentor-group-head h3{
+      color:#111827;
+      font-size:24px;
+      line-height:1.2;
+      margin:0;
+    }
+    .mentor-group-head p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+      max-width:540px;
+      margin:0;
+    }
+    .mentor-track{
+      display:grid;
+      max-width:100%;
+      min-width:0;
+      grid-auto-flow:column;
+      grid-auto-columns:260px;
+      align-items:stretch;
+      gap:18px;
+      overflow-x:auto;
+      padding:4px 4px 18px;
+      scroll-snap-type:none;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    .mentor-track::-webkit-scrollbar{
+      display:none;
+      width:0;
+      height:0;
+    }
+    .mentor-card-scroll{
+      min-width:0;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:0 14px 34px rgba(31,79,163,.08);
+      overflow:hidden;
+      transition:.25s;
+      scroll-snap-align:start;
+    }
+    .mentor-card-scroll:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 42px rgba(31,79,163,.12);
+    }
+    .mentor-card-photo{
+      position:relative;
+      width:100%;
+      height:310px;
+      background:#eef4ff;
+      overflow:hidden;
+      padding:0;
+    }
+    .mentor-card-photo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:var(--pos,center 38%);
+      display:block;
+      transform:scale(1.02);
+    }
+    .mentor-card-photo::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:110px;
+      background:linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.42) 46%,
+        #fff 100%
+      );
+      pointer-events:none;
+    }
+    .mentor-card-info{
+      position:relative;
+      z-index:1;
+      margin-top:-38px;
+      padding:0 18px 20px;
+      background:#fff;
+    }
+    .mentor-tag{
+      display:inline-flex;
+      align-items:center;
+      padding:5px 10px;
+      border-radius:999px;
+      background:var(--brand-light);
+      color:var(--brand);
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+    .mentor-card-info h3{
+      font-size:24px;
+      line-height:1.1;
+      margin-bottom:8px;
+      color:#111827;
+      letter-spacing:0;
+    }
+    .mentor-role{
+      color:#25324a;
+      font-size:14px;
+      font-weight:900;
+      margin-bottom:6px;
+      line-height:1.6;
+    }
+    .mentor-bio{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.75;
+    }
+
+    .cases{
+      background:#f5f9ff;
+    }
+    .case-rows{
+      display:grid;
+      gap:24px;
+      min-width:0;
+    }
+    .case-row{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:0 16px 38px rgba(31,79,163,.08);
+      overflow:hidden;
+      min-width:0;
+    }
+    .case-row-head{
+      display:grid;
+      grid-template-columns:minmax(220px,320px) 1fr;
+      gap:18px;
+      align-items:end;
+      padding:22px 24px 14px;
+      min-width:0;
+    }
+    .case-row-title{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .case-label{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:36px;
+      height:36px;
+      border-radius:999px;
+      background:var(--brand-light);
+      color:var(--brand);
+      font-weight:900;
+      font-size:13px;
+      flex:0 0 auto;
+    }
+    .case-row h3{
+      font-size:23px;
+      line-height:1.25;
+      margin:0;
+    }
+    .case-row p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+      margin:0;
+      min-width:0;
+      overflow-wrap:anywhere;
+    }
+    .case-track{
+      display:grid;
+      max-width:100%;
+      min-width:0;
+      grid-auto-flow:column;
+      grid-auto-columns:300px;
+      gap:16px;
+      overflow-x:auto;
+      padding:0 24px 22px;
+      scroll-snap-type:none;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    .case-track::-webkit-scrollbar{
+      display:none;
+      width:0;
+      height:0;
+    }
+    .case-shot{
+      scroll-snap-align:start;
+      border:1px dashed rgba(31,79,163,.26);
+      border-radius:16px;
+      background:
+        linear-gradient(135deg,rgba(31,79,163,.08),rgba(239,246,255,.72)),
+        repeating-linear-gradient(-45deg,rgba(31,79,163,.07) 0,rgba(31,79,163,.07) 1px,transparent 1px,transparent 12px);
+      aspect-ratio:3/4;
+      min-height:0;
+      padding:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(31,79,163,.62);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .case-shot:before{
+      content:"";
+      position:absolute;
+      inset:14px;
+      border-radius:12px;
+      border:1px solid rgba(31,79,163,.14);
+      background:rgba(255,255,255,.42);
+    }
+    .case-shot span{
+      position:relative;
+      z-index:1;
+    }
+    .case-shot img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      position:absolute;
+      inset:0;
+      z-index:2;
+    }
+    .case-shot.has-image{
+      border-style:solid;
+      background:#fff;
+      padding:0;
+    }
+    .case-shot.has-image span{
+      padding:16px;
+    }
+    .case-shot img[src*="case-university-"]{
+      object-fit:contain;
+      object-position:center center;
+    }
+
+    .insights{
+      background:#fff;
+    }
+    .knowledge-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+    .knowledge-country{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:0 16px 38px rgba(31,79,163,.08);
+    }
+    .knowledge-country-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:22px;
+    }
+    .knowledge-country-head h3{
+      font-size:30px;
+      margin:0;
+    }
+    .knowledge-country-head span{
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--brand);
+      white-space:nowrap;
+    }
+    .knowledge-topics{
+      display:grid;
+      gap:18px;
+    }
+    .knowledge-topic{
+      padding:18px;
+      border:1px solid rgba(31,79,163,.16);
+      border-radius:18px;
+      background:linear-gradient(180deg,#fff,#f9fbff);
+    }
+    .knowledge-topic h4{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:18px;
+      margin:0 0 12px;
+    }
+    .knowledge-topic h4 span{
+      display:grid;
+      place-items:center;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:#eaf2ff;
+      color:var(--brand);
+      font-size:13px;
+      font-weight:900;
+      flex:0 0 auto;
+    }
+    .knowledge-topic ol{
+      margin:0;
+      padding-left:20px;
+      color:var(--muted);
+      display:grid;
+      gap:8px;
+    }
+    .knowledge-topic li{
+      line-height:1.72;
+      padding-left:4px;
+    }
+    .knowledge-topic a{
+      color:inherit;
+      text-decoration:none;
+      transition:color .2s ease;
+    }
+    .knowledge-topic a:hover{
+      color:var(--brand);
+    }
+
+    .cta{
+      padding:82px 0;
+      background:linear-gradient(135deg,var(--brand-dark),var(--brand));
+      color:#fff;
+    }
+    .cta-grid{
+      display:grid;
+      grid-template-columns:1fr 280px;
+      gap:40px;
+      align-items:center;
+    }
+    .cta h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.15;
+      margin-bottom:16px;
+    }
+    .cta p{
+      color:rgba(255,255,255,.78);
+      max-width:720px;
+    }
+    .qr{
+      background:#fff;
+      color:var(--text);
+      border-radius:24px;
+      padding:18px;
+      text-align:center;
+    }
+    .qr-box{
+      width:210px;
+      height:210px;
+      margin:0 auto 12px;
+      border-radius:18px;
+      background:#fff;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+    .qr-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    footer{
+      background:#0c1833;
+      color:rgba(255,255,255,.78);
+      padding:54px 0 28px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.1fr repeat(4,1fr);
+      gap:30px;
+      margin-bottom:36px;
+    }
+    footer h3{
+      color:#fff;
+      margin-bottom:14px;
+      font-size:17px;
+    }
+    footer a{
+      display:block;
+      margin:8px 0;
+      font-size:14px;
+      color:rgba(255,255,255,.68);
+    }
+    .copyright{
+      border-top:1px solid rgba(255,255,255,.12);
+      padding-top:18px;
+      font-size:13px;
+      color:rgba(255,255,255,.55);
+    }
+
+    .float-contact{
+      position:fixed;
+      right:18px;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:1001;
+      display:grid;
+      gap:10px;
+    }
+    .float-item{
+      width:62px;
+      height:62px;
+      border-radius:20px;
+      background:#fff;
+      color:var(--brand);
+      border:1px solid var(--line);
+      box-shadow:0 12px 30px rgba(31,79,163,.18);
+      display:grid;
+      place-items:center;
+      font-size:12px;
+      font-weight:900;
+      cursor:pointer;
+      position:relative;
+    }
+    .float-item:hover .float-pop{
+      display:block;
+    }
+    .float-pop{
+      display:none;
+      position:absolute;
+      right:74px;
+      bottom:0;
+      width:180px;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:14px;
+      color:var(--text);
+      text-align:center;
+    }
+    .float-pop .small-qr{
+      height:130px;
+      border-radius:14px;
+      background:var(--brand-soft);
+      border:1px dashed var(--line);
+      display:grid;
+      place-items:center;
+      color:var(--brand);
+      margin-bottom:8px;
+      overflow:hidden;
+    }
+    .float-pop .small-qr img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:14px;
+      display:block;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .6s ease,transform .6s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(max-width:1180px){
+      .menu{
+        gap:18px;
+        font-size:14px;
+      }
+      .service-cards{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+    @media(max-width:980px){
+      .menu{
+        display:none;
+      }
+      .capabilities-grid,
+      .faq-layout,
+      .knowledge-grid,
+      .cta-grid{
+        grid-template-columns:1fr;
+      }
+      .capabilities-cards{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .service-cards{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .case-row-head{
+        grid-template-columns:1fr;
+      }
+      .case-track{
+        grid-auto-columns:240px;
+      }
+      .uk-services-head{
+        display:block;
+      }
+      .uk-services-title-wrap{
+        min-width:0;
+      }
+      .uk-services-head .section-title{
+        white-space:normal;
+      }
+      .case-shot{
+        min-height:0;
+      }
+      .hero-inner{
+        padding-bottom:120px;
+      }
+      .mentor-track{
+        grid-auto-columns:280px;
+      }
+      .mentor-card-photo{
+        height:290px;
+      }
+      .faq-copy{
+        position:relative;
+        top:auto;
+      }
+    }
+    @media(max-width:640px){
+      .container{
+        width:min(100% - 28px,1280px);
+      }
+      .nav{
+        height:68px;
+      }
+      .brand{
+        min-width:170px;
+      }
+      .brand-logo{
+        height:42px;
+      }
+      .nav-actions .btn{
+        padding:10px 14px;
+        font-size:13px;
+      }
+      .hero h1{
+        font-size:38px;
+      }
+      .hero h1 span{
+        white-space:normal;
+      }
+      .hero p{
+        font-size:16px;
+      }
+      .hero-inner{
+        padding-top:100px;
+        padding-bottom:120px;
+      }
+      .capabilities-cards,
+      .service-cards{
+        grid-template-columns:1fr;
+      }
+      .case-row-head{
+        padding:20px 18px 12px;
+      }
+      .case-track{
+        grid-auto-columns:220px;
+        gap:12px;
+        padding:0 18px 18px;
+      }
+      .case-shot{
+        min-height:0;
+      }
+      section{
+        padding:62px 0;
+      }
+      .section-head{
+        display:block;
+      }
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+      .float-contact{
+        right:10px;
+        bottom:26px;
+        top:auto;
+        transform:none;
+      }
+      .float-item{
+        width:52px;
+        height:52px;
+      }
+      .program-hero{
+        min-height:440px;
+      }
+      .program-hero h2{
+        white-space:normal;
+      }
+      .mentors .section-desc,
+      .cases .section-desc,
+      .mentor-group-head p{
+        max-width:100%;
+        overflow-wrap:anywhere;
+      }
+      .mentor-groups{
+        gap:28px;
+      }
+      .mentor-group-head{
+        display:block;
+      }
+      .mentor-group-head h3{
+        font-size:21px;
+        margin-bottom:6px;
+      }
+      .knowledge-country{
+        padding:22px 18px;
+      }
+      .knowledge-country-head{
+        display:block;
+      }
+      .knowledge-country-head h3{
+        font-size:26px;
+        margin-bottom:6px;
+      }
+      .knowledge-topic{
+        padding:16px;
+      }
+      .knowledge-topic h4{
+        align-items:flex-start;
+      }
+      .mentor-track{
+        grid-auto-columns:250px;
+        gap:14px;
+        padding-bottom:14px;
+      }
+      .mentor-card-photo{
+        height:270px;
+      }
+      .mentor-card-info{
+        padding:18px;
+      }
+      .mentor-card-info h3{
+        font-size:22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="得知课堂首页">
+        <img class="brand-logo" src="assets/logo-main.png" alt="得知课堂 Avantclass Logo">
+      </a>
+
+      <nav class="menu">
+        <a href="#canada">加拿大本科辅导</a>
+        <a href="#uk">英本升学规划</a>
+        <a href="#mentors">导师团队</a>
+        <a href="#cases">过往案例</a>
+        <a href="#insights">留学知识库</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#contact">微信咨询</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-slide" aria-hidden="true"></div>
+        <div class="hero-slide" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-side-label">Avantclass</div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Since 2014 · 本科阶段学业支持</div>
+          <h1>得知课堂专注<br><span>加拿大本科同辅与英国本科升学规划</span></h1>
+          <p>聚焦英加本科升学规划，从留前本科申请路径规划及背景提升，到留后本科可以同步辅导，陪伴学生走稳每一个关键阶段。</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">预约学业评估</a>
+            <a class="btn btn-secondary" href="#canada">查看核心业务</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities">
+      <div class="container capabilities-grid">
+        <div class="capabilities-copy reveal">
+          <div class="section-kicker">Service Strength</div>
+          <h2 class="section-title">得知课堂<br>服务涵盖</h2>
+          <p>深耕国际教育十余年，专注高质量学业辅导与升学规划。</p>
+          <p>从国际课程（Alevel、IB、AP）培训、本科申请、本科课程辅导（GPA提升）、硕博辅导与求职规划，得知课堂建立了全面的产品线与海外升学的服务体系。</p>
+        </div>
+
+        <div class="capabilities-cards reveal" id="stats">
+          <div class="cap-card">
+            <div class="cap-icon clock"></div>
+            <div class="cap-number">
+              <span class="main counter" data-target="12">0</span><span class="unit">年</span>
+            </div>
+            <span class="cap-card-label">创办年限</span>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-icon people"></div>
+            <div class="cap-number">
+              <span class="main counter" data-target="20000">0</span><span class="unit">+</span>
+            </div>
+            <span class="cap-card-label">累计服务人次</span>
+          </div>
+
+          <div class="cap-card">
+    <div class="cap-icon cap"></div>
+            <div class="cap-number">
+              <span class="main counter" data-target="1500">0</span><span class="unit">+</span>
+            </div>
+            <span class="cap-card-label">在读学员</span>
+</div>
+          
+          <div class="cap-card">
+            <div class="cap-icon cap"></div>
+            <div class="cap-number">
+              <span class="main counter" data-target="1000">0</span><span class="unit">+</span>
+            </div>
+            <span class="cap-card-label">QS100导师人数</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="program-hero canada" id="canada">
+      <div class="container">
+        <div class="program-hero-content reveal">
+          <div class="section-kicker" style="color:#fff;opacity:.86;">Canadian Undergraduate Support</div>
+          <h2>加拿大本科辅导</h2>
+          <p>新生规划、暑期先修，到督学陪跑与稳分计划，帮助学生提前看清路径、降低试错成本，稳住本科关键阶段。</p>
+          <div class="program-labels">
+            <span>Offer选择</span>
+            <span>选课规划</span>
+            <span>暑期先修</span>
+            <span>督学陪跑</span>
+            <span>稳分计划</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="program-detail">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Canada Services</div>
+            <h2 class="section-title">加拿大本科五大支持方向</h2>
+          </div>
+          <p class="section-desc">围绕加拿大本科学生从入学前到在读阶段的关键问题，提供更具体、更可执行的学业支持。</p>
+        </div>
+
+        <div class="service-cards reveal">
+          <div class="biz-card">
+            <div class="num">01</div>
+            <h3>新生规划</h3>
+            <ul>
+              <li>拆解毕业要求与进专业规则</li>
+              <li>规划大一课程组合和GPA节奏</li>
+              <li>避开高风险选课，提前布局专业路径</li>
+            </ul>
+          </div>
+
+          <div class="biz-card">
+  <div class="num">02</div>
+  <h3>1V1辅导</h3>
+  <ul>
+    <li>根据新老生需求制定辅导稳分方案</li>
+    <li>匹配同专业背景导师1V1教学</li>
+    <li>全程学管课前、课中、课后跟踪反馈</li>
+  </ul>
+</div>
+
+          <div class="biz-card">
+            <div class="num">03</div>
+            <h3>暑期先修</h3>
+            <ul>
+              <li>提前衔接大学课堂和考试节奏</li>
+              <li>覆盖开学前核心课程高频内容</li>
+              <li>真题训练+方法升级，降低首考风险</li>
+            </ul>
+          </div>
+
+          <div class="biz-card">
+            <div class="num">04</div>
+            <h3>督学陪跑</h3>
+            <ul>
+              <li>定制作业、考试、DDL管理日历</li>
+              <li>跟进学习状态与阶段成绩变化</li>
+              <li>风险前置反馈，让家长及时掌握进度</li>
+            </ul>
+          </div>
+
+          <div class="biz-card">
+            <div class="num">05</div>
+            <h3>稳分计划</h3>
+            <ul>
+              <li>按目标课程匹配高分导师辅导</li>
+              <li>同步跟进作业、Quiz、Midterm、Final</li>
+              <li>拆解提分路径，帮学生稳住GPA表现</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-section">
+          <div class="faq-layout">
+            <div class="faq-copy reveal">
+              <h3>加拿大留学生常见问题</h3>
+              <p>围绕Offer选择、选课节奏、GPA风险和家长最关心的学业反馈问题，提前梳理关键判断点。</p>
+            </div>
+
+            <div class="faq-list reveal">
+              <div class="faq-item">
+                <button class="faq-question"><span>01</span>拿到多个Offer，怎么判断哪条路径更适合孩子？</button>
+                <div class="faq-answer"><p>不能只看排名，需要结合学生目标、专业难度、课程结构、就业与升学路径综合判断。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>02</span>目标专业竞争激烈，大一应该提前锁定哪些关键节点？</button>
+                <div class="faq-answer"><p>需要提前确认进专业课程、最低分数、GPA要求、申请时间线，以及第一年最容易影响结果的课程组合。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>03</span>第一学期课程怎么排，才能兼顾GPA、进专业？</button>
+                <div class="faq-answer"><p>课表不能只看时间轻松，还要平衡必修、难度、教授考法、作业密度和后续进专业路径。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>04</span>暑假先修应该学到什么程度，才不是无效预习？</button>
+                <div class="faq-answer"><p>重点不是提前刷完所有内容，而是掌握大学课堂节奏、核心考点、考试题型和标准解题方法。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>05</span>孩子高中成绩很好，为什么上大学后还是可能掉队？</button>
+                <div class="faq-answer"><p>大学课程节奏、评分标准、独立学习要求和考试难度都不同，很多学生需要重新建立学习系统。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>06</span>家长人在国内，怎么及时知道孩子有没有学业风险？</button>
+                <div class="faq-answer"><p>可以通过学习日历、阶段反馈、成绩追踪和督学沟通机制，让风险更早被发现，而不是等出分后再补救。</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="program-hero uk" id="uk">
+      <div class="container">
+        <div class="program-hero-content reveal">
+          <div class="section-kicker" style="color:#fff;opacity:.86;">UK Academic Planning</div>
+          <h2>英本升学规划</h2>
+          <p>围绕国际课程、竞赛背景、牛剑/G5笔试面试与长期申请路径，帮助学生系统提升英本申请竞争力。</p>
+          <div class="program-labels">
+            <span>国际课程辅导</span>
+            <span>国际竞赛辅导</span>
+            <span>牛剑笔试备考</span>
+            <span>牛剑面试训练</span>
+            <span>长期学术规划</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="program-detail soft uk-detail">
+      <div class="container">
+        <div class="section-head reveal uk-services-head">
+          <div class="uk-services-title-wrap">
+            <div class="section-kicker">UK Services</div>
+            <h2 class="section-title">英国本科申请与学术能力提升</h2>
+          </div>
+          <p class="section-desc">以课程成绩为基础，进一步构建竞赛、笔试、面试与长期学术画像，为牛剑/G5申请提前布局。</p>
+        </div>
+
+        <div class="service-cards reveal">
+          <div class="biz-card">
+            <div class="num">01</div>
+            <h3>国际课程辅导</h3>
+            <ul>
+              <li>IGCSE、GCSE、A-Level、IB、AP 辅导</li>
+              <li>牛剑/G5导师授课，熟悉各考局要求</li>
+              <li>1v1与小班课可选，中英/全英授课</li>
+              <li>拆解薄弱项，帮助学生稳步冲 A/A*</li>
+            </ul>
+          </div>
+
+          <div class="biz-card">
+            <div class="num">02</div>
+            <h3>国际竞赛辅导</h3>
+            <ul>
+              <li>覆盖主流高含金量国际竞赛</li>
+              <li>牛剑导师及竞赛金牌导师带队</li>
+              <li>帮助学生提升竞赛解题能力</li>
+              <li>为牛剑/G5申请积累学术竞争力</li>
+            </ul>
+          </div>
+
+          <div class="biz-card">
+            <div class="num">03</div>
+            <h3>牛剑笔试备考</h3>
+            <ul>
+              <li>覆盖ESAT、TMUA、STEP等笔试</li>
+              <li>牛剑导师拆解考点与命题逻辑</li>
+              <li>真题训练与阶段测评结合</li>
+              <li>帮助学生建立笔试竞争优势</li>
+            </ul>
+          </div>
+
+          <div class="biz-card">
+            <div class="num">04</div>
+            <h3>牛剑面试训练</h3>
+            <ul>
+              <li>牛剑导师还原真实面试场景</li>
+              <li>培养学术表达与逻辑推导能力</li>
+              <li>训练陌生问题分析能力</li>
+              <li>帮助学生适应高强度学术讨论</li>
+            </ul>
+          </div>
+
+          <div class="biz-card">
+            <div class="num">05</div>
+            <h3>长期学术规划</h3>
+            <ul>
+              <li>结合专业方向制定成长路径</li>
+              <li>统筹课程、竞赛与笔试安排</li>
+              <li>明确不同年级重点任务</li>
+              <li>提前布局牛剑与G5申请竞争力</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-section">
+          <div class="faq-layout">
+            <div class="faq-copy reveal">
+              <h3>牛剑/G5申请常见问题</h3>
+              <p>围绕课程选择、竞赛路径、笔试面试和申请时间线，帮助家庭更早判断准备重点。</p>
+            </div>
+
+            <div class="faq-list reveal">
+              <div class="faq-item">
+                <button class="faq-question"><span>01</span>目标牛津、剑桥，需要从几年级开始规划？</button>
+                <div class="faq-answer"><p>越早越好。低年级重点是课程组合、学术兴趣和竞赛方向，高年级则需要进入笔试、面试与材料节奏。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>02</span>IGCSE和A-Level成绩，哪个对牛剑申请影响更大？</button>
+                <div class="faq-answer"><p>A-Level更直接影响申请门槛，但IGCSE阶段会影响基础、选课和后续高阶课程表现，不能完全忽略。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>03</span>国际竞赛应该怎么选？AMC、BPhO、UKChO到底适合谁？</button>
+                <div class="faq-answer"><p>竞赛选择要和专业方向匹配，数学、物理、化学、经济等方向对应的竞赛价值和准备节奏不同。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>04</span>孩子目标G5，现在课程、竞赛和笔试应该如何安排优先级？</button>
+                <div class="faq-answer"><p>先保证核心课程成绩，再根据专业方向安排竞赛和笔试；申请季前需要进入系统化模考与复盘。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>05</span>申请牛剑哪些课外活动有必要参加？</button>
+                <div class="faq-answer"><p>牛剑更看重学术相关活动，阅读、竞赛、项目、论文、学术讨论等都要服务于专业兴趣和能力证明。</p></div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question"><span>06</span>ESAT、TMUA、STEP分别适用于哪些专业？</button>
+                <div class="faq-answer"><p>不同考试对应不同大学和专业方向，需要结合目标院校要求确认，不能等申请季才临时准备。</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mentors" id="mentors">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Mentor Team</div>
+            <h2 class="section-title">导师团队</h2>
+          </div>
+          <p class="section-desc">导师团队覆盖加拿大本科辅导、英国本科申请、国际课程、竞赛与牛剑/G5笔试面试方向，为不同阶段学生提供专业支持。</p>
+        </div>
+
+        <div class="mentor-groups reveal">
+          <div class="mentor-group mentor-group-uk">
+            <div class="mentor-group-head">
+              <h3>英国导师</h3>
+              <p>覆盖牛剑/G5申请、国际竞赛、笔试面试与学术能力提升方向。</p>
+            </div>
+            <div class="mentor-track">
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 46%;"><img src="assets/mentor-05.jpg" alt="Erwin"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">牛津大学物理系</span>
+                  <h3>Erwin</h3>
+                  <p class="mentor-role">牛津大学物理系｜PAT 97分全球第一</p>
+                  <p class="mentor-bio">物理碗01区 TOP1｜BPhO近满分Top Gold｜累计带领56位学员上岸牛剑</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 44%;"><img src="assets/mentor-06.jpg" alt="Sam"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">牛津大学物理系</span>
+                  <h3>Sam</h3>
+                  <p class="mentor-role">牛津大学物理系｜PAT 95分全球第五</p>
+                  <p class="mentor-bio">天津市中考状元｜BPhO Top Gold｜累计带领56位学员上岸牛剑</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 42%;"><img src="assets/mentor-07.jpg" alt="Steve"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">牛津大学数学</span>
+                  <h3>Steve</h3>
+                  <p class="mentor-role">牛津大学数学系本硕毕业</p>
+                  <p class="mentor-bio">曾任牛津亚太区学生会主席｜10年国际数学竞赛及G5申请规划经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 34%;"><img src="assets/mentor-08.jpg" alt="Helen"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">牛津大学生物医学</span>
+                  <h3>Helen</h3>
+                  <p class="mentor-role">牛津大学生物医学系 Distinction</p>
+                  <p class="mentor-bio">USABO Gold｜UKChO Gold｜学员竞赛获奖率超80%，牛剑面邀率90%</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 36%;"><img src="assets/mentor-09.jpg" alt="Holly"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">剑桥大学经济系</span>
+                  <h3>Holly</h3>
+                  <p class="mentor-role">剑桥大学经济系｜IEO金奖</p>
+                  <p class="mentor-bio">EEO个人金奖｜TMUA 7.5分｜1000h+经济竞赛及剑桥经济申请辅导经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-10.jpg" alt="Christine"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">牛津大学化学系</span>
+                  <h3>Christine</h3>
+                  <p class="mentor-role">牛津大学化学系本硕</p>
+                  <p class="mentor-bio">UKChO Gold｜学员竞赛金奖率100%｜5年国际化学竞赛及牛剑辅导经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 34%;"><img src="assets/mentor-11.jpg" alt="Christine"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">剑桥大学经济系</span>
+                  <h3>Christine</h3>
+                  <p class="mentor-role">剑桥大学经济系｜新加坡莱佛士书院</p>
+                  <p class="mentor-bio">擅长AS体系辅导｜带过上百学生取得A*｜4000h+经济竞赛及剑桥经济申请辅导经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 48%;"><img src="assets/mentor-12.jpg" alt="Haoran"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">剑桥大学物理方向</span>
+                  <h3>Haoran</h3>
+                  <p class="mentor-role">剑桥大学自然科学专业物理方向</p>
+                  <p class="mentor-bio">剑桥笔试NSAA 26.7/27｜SG ALevel Full distinctions｜1000h+物理竞赛及牛剑笔面试辅导经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-13.jpg" alt="Helen"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">剑桥大学工程</span>
+                  <h3>Helen</h3>
+                  <p class="mentor-role">剑桥大学工程专业电子信息方向</p>
+                  <p class="mentor-bio">剑桥笔试ENGAA 9 9 9｜BPHO 全国第五｜2000h+国际课程及竞赛辅导经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-14.jpg" alt="Junzhe"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">剑桥大学物理系</span>
+                  <h3>Junzhe</h3>
+                  <p class="mentor-role">剑桥大学物理系｜SM1奖学金得主</p>
+                  <p class="mentor-bio">新加坡物理奥赛SPhO Silver｜SMO Silver｜带数十名同学在各类物理奥赛中摘金</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-15.jpg" alt="Amelia Song"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">牛津大学材料</span>
+                  <h3>Amelia Song</h3>
+                  <p class="mentor-role">牛津大学材料专业｜PAT 95世界第五</p>
+                  <p class="mentor-bio">BPHO TOP Gold｜UKChO Gold｜过往国际课程学生成绩均达到A或A*</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-16.jpg" alt="Thea Chen"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">牛津大学数学</span>
+                  <h3>Thea Chen</h3>
+                  <p class="mentor-role">牛津大学数学专业｜BMO Merit</p>
+                  <p class="mentor-bio">UKMT SMC Gold｜UKChO Gold｜500h+数学类竞赛以及国际课程辅导经验</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mentor-group mentor-group-canada">
+            <div class="mentor-group-head">
+              <h3>加拿大导师</h3>
+              <p>覆盖加拿大本科课程辅导、院校方向规划、GPA提升与长期学业陪跑。</p>
+            </div>
+            <div class="mentor-track">
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-01.jpg" alt="Crystal"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">多伦多大学统计</span>
+                  <h3>Crystal</h3>
+                  <p class="mentor-role">多伦多大学统计专业｜cGPA 3.8+</p>
+                  <p class="mentor-bio">香港大学AI教育学全奖博士在读｜12年国际教育及学术规划经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 42%;"><img src="assets/mentor-02.jpg" alt="Vicky"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">多伦多大学金融</span>
+                  <h3>Vicky</h3>
+                  <p class="mentor-role">多伦多大学金融本｜CGPA 3.9</p>
+                  <p class="mentor-bio">牛津金融经济硕士HD毕业｜10年加拿大本科辅导经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-03.jpg" alt="HUAHUA"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">滑铁卢大学精算统计</span>
+                  <h3>HUAHUA</h3>
+                  <p class="mentor-role">滑铁卢大学精算统计双专业｜均分95+</p>
+                  <p class="mentor-bio">加拿大本硕3.5年极速毕业｜12年加拿大各大学辅导及规划经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 34%;"><img src="assets/mentor-04.jpg" alt="Rosy"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">UBC Sauder金融</span>
+                  <h3>Rosy</h3>
+                  <p class="mentor-role">UBC Sauder金融均分90+毕业</p>
+                  <p class="mentor-bio">现加拿大五大行财务规划师｜12年加拿大各大学辅导及规划经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-19.jpg" alt="Angie"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">多伦多大学Rotman金融</span>
+                  <h3>Angie</h3>
+                  <p class="mentor-role">多伦多大学Rotman金融专业｜波士顿大学国际市场营销硕士</p>
+                  <p class="mentor-bio">10年加拿大各大学辅导及规划经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 38%;"><img src="assets/mentor-18.jpg" alt="Shucheng"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">多伦多大学工程科学</span>
+                  <h3>Shucheng</h3>
+                  <p class="mentor-role">多伦多大学Engineering Science｜ECE专业</p>
+                  <p class="mentor-bio">GPA 3.95+｜AI芯片研发｜2年工程&CS课程辅导及规划经验</p>
+                </div>
+              </div>
+
+              <div class="mentor-card-scroll">
+                <div class="mentor-card-photo" style="--pos:center 44%;"><img src="assets/mentor-17.jpg" alt="Sally"></div>
+                <div class="mentor-card-info">
+                  <span class="mentor-tag">UBC本科 / UCL硕士</span>
+                  <h3>Sally</h3>
+                  <p class="mentor-role">英属哥伦比亚大学UBC毕业｜伦敦大学学院UCL硕士</p>
+                  <p class="mentor-bio">7年留学经历｜5年海本规划经验</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cases" id="cases">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Success Stories</div>
+            <h2 class="section-title">过往辅导案例</h2>
+          </div>
+          <p class="section-desc">家长可以从这里直观看到不同阶段学生的真实提升结果，包括课程提分、竞赛获奖、牛剑申请与大学课程辅导成果。</p>
+        </div>
+
+        <div class="case-rows">
+          <div class="case-row reveal">
+            <div class="case-row-head">
+              <div class="case-row-title">
+                <span class="case-label">01</span>
+                <h3>国际课程辅导</h3>
+              </div>
+              <p>适合家长了解孩子在 IGCSE、GCSE、A-Level、IB、AP 等国际课程中的提分路径和阶段成果。</p>
+            </div>
+            <div class="case-track" aria-label="国际课程辅导截图滑动展示">
+              <div class="case-shot has-image"><img src="assets/case-course-01.JPEG" alt="2025 ALEVEL 进阶数学 A 成绩捷报" onerror="this.remove()"><span>A-Level 进阶数学 A<br>截图 01</span></div>
+              <div class="case-shot has-image"><img src="assets/case-course-02.JPEG" alt="2025 ALEVEL 经济与进阶数学 AA 成绩捷报" onerror="this.remove()"><span>A-Level 经济/进阶数学 AA<br>截图 02</span></div>
+              <div class="case-shot has-image"><img src="assets/case-course-03.JPEG" alt="2025 ALEVEL 进阶数学与化学 AA 成绩捷报" onerror="this.remove()"><span>A-Level 进阶数学/化学 AA<br>截图 03</span></div>
+              <div class="case-shot has-image"><img src="assets/case-course-04.JPEG" alt="2025 ALEVEL 经济 A 成绩捷报" onerror="this.remove()"><span>A-Level 经济 A<br>截图 04</span></div>
+              <div class="case-shot has-image"><img src="assets/case-course-05.JPEG" alt="2025 ALEVEL 进阶数学 A 成绩捷报" onerror="this.remove()"><span>A-Level 进阶数学 A<br>截图 05</span></div>
+                        </div>
+          </div>
+
+          <div class="case-row reveal">
+            <div class="case-row-head">
+              <div class="case-row-title">
+                <span class="case-label">02</span>
+                <h3>国际竞赛辅导</h3>
+              </div>
+              <p>适合家长了解数理化竞赛备赛后的获奖结果，以及孩子冲刺高含金量竞赛的可参考路径。</p>
+            </div>
+            <div class="case-track" aria-label="国际竞赛辅导截图滑动展示">
+              <div class="case-shot has-image"><img src="assets/case-competition-01.jfif" alt="2026 BPhO Round 1 Global Gold competition result" onerror="this.remove()"><span>Competition case<br>Image 01</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-03.jfif" alt="2026 BPhO Round 1 Top Gold competition result" onerror="this.remove()"><span>Competition case<br>Image 03</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-04.jfif" alt="2026 BPhO Round 1 Top Gold competition result" onerror="this.remove()"><span>Competition case<br>Image 04</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-05.jfif" alt="2026 BPhO Round 1 certificate result" onerror="this.remove()"><span>Competition case<br>Image 05</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-06.jfif" alt="2026 BPhO Round 1 Top Gold certificate result" onerror="this.remove()"><span>Competition case<br>Image 06</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-07.jfif" alt="2026 BPhO IPC Global Gold competition result" onerror="this.remove()"><span>Competition case<br>Image 07</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-08.jfif" alt="2026 BPhO IPC Gold Award competition result" onerror="this.remove()"><span>Competition case<br>Image 08</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-09.jfif" alt="2026 BPhO SPC Global Award competition result" onerror="this.remove()"><span>Competition case<br>Image 09</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-10.jfif" alt="2026 BPhO SPC Global Gold competition result" onerror="this.remove()"><span>Competition case<br>Image 10</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-new-01.jpg" alt="2026 UKChO Gold competition result" onerror="this.remove()"><span>Competition case<br>Image 11</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-new-02.jpg" alt="2026 AMC 12 Distinction competition result" onerror="this.remove()"><span>Competition case<br>Image 12</span></div>
+              <div class="case-shot has-image"><img src="assets/case-competition-new-03.jpg" alt="2026 AMC 12 Distinction competition result" onerror="this.remove()"><span>Competition case<br>Image 13</span></div>
+            </div>
+          </div>
+
+          <div class="case-row reveal">
+            <div class="case-row-head">
+              <div class="case-row-title">
+                <span class="case-label">03</span>
+                <h3>本科申请</h3>
+              </div>
+              <p>适合家长了解牛津、剑桥等本科申请成果，以及选校规划、笔试面试和文书支持如何配合。</p>
+            </div>
+            <div class="case-track" aria-label="本科申请截图滑动展示">
+              <div class="case-shot has-image"><img src="assets/case-application-01.jfif" alt="Oxford and Cambridge application success case 01" onerror="this.remove()"><span>Application case<br>Image 01</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-02.jfif" alt="Oxford and Cambridge application success case 02" onerror="this.remove()"><span>Application case<br>Image 02</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-03.jfif" alt="Oxford and Cambridge application success case 03" onerror="this.remove()"><span>Application case<br>Image 03</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-04.jfif" alt="Oxford and Cambridge application success case 04" onerror="this.remove()"><span>Application case<br>Image 04</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-05.jfif" alt="Oxford and Cambridge application success case 05" onerror="this.remove()"><span>Application case<br>Image 05</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-06.jfif" alt="Oxford and Cambridge application success case 06" onerror="this.remove()"><span>Application case<br>Image 06</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-07.jfif" alt="Oxford and Cambridge application success case 07" onerror="this.remove()"><span>Application case<br>Image 07</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-08.jfif" alt="Oxford and Cambridge application success case 08" onerror="this.remove()"><span>Application case<br>Image 08</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-09.jfif" alt="Oxford and Cambridge application success case 09" onerror="this.remove()"><span>Application case<br>Image 09</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-10.jfif" alt="Oxford and Cambridge application success case 10" onerror="this.remove()"><span>Application case<br>Image 10</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-11.jfif" alt="Oxford and Cambridge application success case 11" onerror="this.remove()"><span>Application case<br>Image 11</span></div>
+              <div class="case-shot has-image"><img src="assets/case-application-12.jfif" alt="Oxford and Cambridge application success case 12" onerror="this.remove()"><span>Application case<br>Image 12</span></div>
+            </div>
+          </div>
+
+          <div class="case-row reveal">
+            <div class="case-row-head">
+              <div class="case-row-title">
+                <span class="case-label">04</span>
+                <h3>大学课程辅导</h3>
+              </div>
+              <p>适合家长了解大学课程同步辅导、GPA 提升、选课规划和考试冲刺后的实际成果。</p>
+            </div>
+            <div class="case-track" aria-label="大学课程辅导截图滑动展示">
+              <div class="case-shot has-image"><img src="assets/case-university-01.jpg" alt="University course tutoring case 01" onerror="this.remove()"><span>University case<br>Image 01</span></div>
+              <div class="case-shot has-image"><img src="assets/case-university-02.jpg" alt="University course tutoring case 02" onerror="this.remove()"><span>University case<br>Image 02</span></div>
+              <div class="case-shot has-image"><img src="assets/case-university-03.jpg" alt="University course tutoring case 03" onerror="this.remove()"><span>University case<br>Image 03</span></div>
+              <div class="case-shot has-image"><img src="assets/case-university-04.jpg" alt="University course tutoring case 04" onerror="this.remove()"><span>University case<br>Image 04</span></div>
+              <div class="case-shot has-image"><img src="assets/case-university-05.jpg" alt="University course tutoring case 05" onerror="this.remove()"><span>University case<br>Image 05</span></div>
+              <div class="case-shot has-image"><img src="assets/case-university-06.jpg" alt="University course tutoring case 06" onerror="this.remove()"><span>University case<br>Image 06</span></div>
+              <div class="case-shot has-image"><img src="assets/case-university-07.jpg" alt="University course tutoring case 07" onerror="this.remove()"><span>University case<br>Image 07</span></div>
+              <div class="case-shot has-image"><img src="assets/case-university-08.jpg" alt="University course tutoring case 08" onerror="this.remove()"><span>University case<br>Image 08</span></div>
+              <div class="case-shot has-image"><img src="assets/case-university-09.jpg" alt="University course tutoring case 09" onerror="this.remove()"><span>University case<br>Image 09</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="insights" id="insights">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Knowledge Base</div>
+            <h2 class="section-title">留学知识库</h2>
+          </div>
+          <p class="section-desc">围绕加拿大本科、英国申请和国际课程中的高频问题，持续输出给学生和家长可直接参考的规划建议。</p>
+        </div>
+
+        <div class="knowledge-grid reveal">
+          <article class="knowledge-country">
+            <div class="knowledge-country-head">
+              <h3>英国</h3>
+              <span>UK Planning</span>
+            </div>
+            <div class="knowledge-topics">
+              <div class="knowledge-topic">
+                <h4><span>01</span>国际课程辅导</h4>
+                <ol>
+                  <li><a href="articles/uk-a-level-subject-combination-oxbridge-g5.html">A-Level选课怎么组合，才能最大化牛剑G5的录取机会？</a></li>
+                  <li><a href="articles/uk-igcse-gcse-a-star-oxbridge-impact.html">IGCSE/GCSE没拿到A*，真的会影响申请牛津和剑桥吗？</a></li>
+                  <li><a href="articles/uk-a-level-maths-physics-chemistry-a-star-tutoring.html">国际生如何高效补习A-Level数理化，确保稳稳拿到A*？</a></li>
+                </ol>
+              </div>
+              <div class="knowledge-topic">
+                <h4><span>02</span>数理化国际竞赛辅导</h4>
+                <ol>
+                  <li><a href="articles/uk-stem-competitions-for-oxbridge-engineering-science.html">申请牛剑理工科专业，最应该参加哪些含金量高的国际数理化竞赛？</a></li>
+                  <li><a href="articles/uk-bpho-amc-ukcho-gold-preparation-plan.html">BPhO、AMC、UKChO这类顶尖竞赛要拿金奖，应该如何系统备赛？</a></li>
+                  <li><a href="articles/uk-junior-stem-competitions-foundation.html">孩子还在初中阶段，可以参加哪些数理化国际竞赛为牛剑打基础？</a></li>
+                </ol>
+              </div>
+              <div class="knowledge-topic">
+                <h4><span>03</span>牛剑笔面试辅导</h4>
+                <ol>
+                  <li><a href="articles/uk-oxbridge-admission-tests-esat-tmua-step-preparation.html">牛津剑桥的笔试（ESAT/TMUA/STEP等）到底有多难？要提前多久准备？</a></li>
+                  <li><a href="articles/uk-oxbridge-interview-common-questions-chinese-students.html">牛剑面试一般会问什么？中国学生最容易在哪些环节丢分？</a></li>
+                  <li><a href="articles/uk-oxbridge-camp-worth-it-how-to-choose.html">牛剑营真的有必要上吗？怎么选才不被坑？</a></li>
+                </ol>
+              </div>
+              <div class="knowledge-topic">
+                <h4><span>04</span>牛剑全程规划</h4>
+                <ol>
+                  <li><a href="articles/uk-ig-to-oxbridge-g5-long-term-planning.html">目标牛剑G5，从IG阶段开始怎么给孩子做长期、系统的规划？</a></li>
+                  <li><a href="articles/uk-oxbridge-application-timeline-supercurricular-planning.html">申请牛津剑桥的关键时间节点有哪些？背景提升活动该怎么安排？</a></li>
+                  <li><a href="articles/uk-how-to-choose-reliable-oxbridge-planning-service.html">市面上牛剑规划那么多，怎样才能挑到真正靠谱的？</a></li>
+                </ol>
+              </div>
+            </div>
+          </article>
+
+          <article class="knowledge-country">
+            <div class="knowledge-country-head">
+              <h3>加拿大</h3>
+              <span>Canada Planning</span>
+            </div>
+            <div class="knowledge-topics">
+              <div class="knowledge-topic">
+                <h4><span>01</span>加本新生入学前规划</h4>
+                <ol>
+                  <li><a href="articles/canada-before-first-year-uoft-ubc-waterloo-offer-prep.html">拿到多大/UBC/滑铁卢的offer后，入学前该做哪些准备才能防止大一被淘汰？</a></li>
+                  <li><a href="articles/canada-first-year-no-major-course-selection-popular-programs.html">听说加本大学大一不分专业，怎么选课才能确保进热门专业？</a></li>
+                  <li><a href="articles/canada-first-year-internship-grad-school-planning.html">从大一入学开始，如何系统规划实习和申研，才能顺利进入目标院校？</a></li>
+                </ol>
+              </div>
+              <div class="knowledge-topic">
+                <h4><span>02</span>多大在读生规划</h4>
+                <ol>
+                  <li><a href="articles/uoft-first-year-gpa-not-enough-program-entry-remedies.html">多伦多大学主校区，大一GPA不够没进专业，还有什么补救办法？</a></li>
+                  <li><a href="articles/uoft-math-stat-cs-falling-behind-transfer-or-switch-major.html">进了多大数学/统计/CS，发现完全跟不上，是不是该转专业或转学？</a></li>
+                  <li><a href="articles/canada-uoft-ubc-grade-deflation-high-gpa-grad-school.html">多大、UBC这类学校压分严重吗？想申北美top研究生怎么维持高GPA？</a></li>
+                </ol>
+              </div>
+              <div class="knowledge-topic">
+                <h4><span>03</span>加本同步辅导</h4>
+                <ol>
+                  <li><a href="articles/canada-academic-probation-gpa-recovery-tutoring.html">孩子在加拿大挂科被留校察看，能通过辅导把GPA拉回安全线吗？</a></li>
+                  <li><a href="articles/canada-first-year-calculus-cs-one-on-one-tutoring-useful.html">大一微积分/计算机课完全听不懂，找一对一同步辅导真的有用吗？</a></li>
+                  <li><a href="articles/canada-suspension-notice-emergency-response.html">收到停学处分通知后，怎么紧急应对才能保住学籍？</a></li>
+                </ol>
+              </div>
+              <div class="knowledge-topic">
+                <h4><span>04</span>暑期预修</h4>
+                <ol>
+                  <li><a href="articles/waterloo-math-offer-summer-prestudy-first-year.html">拿到滑铁卢数学系offer，暑假有必要提前学大一课程吗？</a></li>
+                  <li><a href="articles/canada-engineering-first-year-prestudy-high-dropout-pressure.html">都说工程系淘汰率高，入学前先修哪些重点科目能减轻大一压力？</a></li>
+                  <li><a href="articles/canada-first-year-gap-from-a-level-ib-ossd-prestudy.html">加本大一课程和高中A-Level/IB/OSSD的跨度究竟有多大？不先修会不会直接挂科？</a></li>
+                </ol>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-grid">
+        <div class="reveal">
+          <h2>不确定孩子现在适合哪类规划？</h2>
+          <p>扫码添加顾问微信，先做一次孩子当前学业情况和目标路径评估。我们会根据年级、课程体系、目标院校和成绩基础，给出更适合家庭决策的规划建议。</p>
+          <div class="hero-actions" style="margin-top:26px;margin-bottom:0">
+            <a class="btn btn-secondary" href="#">领取新生资料</a>
+            <a class="btn btn-secondary" href="#canada">查看加拿大本科辅导</a>
+          </div>
+        </div>
+
+        <div class="qr reveal">
+          <div class="qr-box">
+            <img src="assets/wechat-qr.png" alt="得知课堂微信咨询二维码">
+          </div>
+          <strong>扫码咨询 / WeChat Consultation</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>得知课堂 Avantclass</h3>
+        <p>专注加拿大本科辅导与英国学业规划，帮助学生和家长看懂本科阶段关键路径。</p>
+      </div>
+
+      <div>
+        <h3>加拿大本科辅导</h3>
+        <a href="#canada">Offer选择</a>
+        <a href="#canada">选课规划</a>
+        <a href="#canada">暑期先修</a>
+        <a href="#canada">稳分计划</a>
+      </div>
+
+      <div>
+        <h3>英国学业规划</h3>
+        <a href="#uk">国际课程</a>
+        <a href="#uk">国际竞赛</a>
+        <a href="#uk">牛剑笔试面试</a>
+        <a href="#uk">G5申请规划</a>
+      </div>
+
+      <div>
+        <h3>导师团队</h3>
+        <a href="#mentors">加拿大导师</a>
+        <a href="#mentors">英国导师</a>
+        <a href="#mentors">QS名校硕博</a>
+      </div>
+
+      <div>
+        <h3>联系我们</h3>
+        <a href="#contact">微信咨询</a>
+        <a>小红书</a>
+        <a>视频号</a>
+        <a href="#contact">扫码添加顾问</a>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      © 2026 得知课堂 Avantclass. All rights reserved. 专注加拿大本科辅导、英国本科申请与国际课程规划。
+    </div>
+  </footer>
+
+  <div class="float-contact">
+    <div class="float-item">
+      微信
+      <div class="float-pop">
+        <div class="small-qr">
+          <img src="assets/wechat-qr.png" alt="得知课堂微信咨询二维码">
+        </div>
+        <p>扫码添加顾问</p>
+      </div>
+    </div>
+    <a class="float-item" href="#contact">评估</a>
+    <a class="float-item" href="#insights">资料</a>
+    <a class="float-item" href="#">TOP</a>
+  </div>
+
+  <script>
+    window.addEventListener('scroll',()=>{
+      document.querySelector('.topbar').classList.toggle('scrolled',window.scrollY>20);
+    });
+
+    const revealEls=document.querySelectorAll('.reveal');
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },{threshold:.12});
+    revealEls.forEach(el=>io.observe(el));
+
+    const faqButtons=document.querySelectorAll('.faq-question');
+    faqButtons.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    const scrollingTracks=document.querySelectorAll('.mentor-track, .case-track');
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    scrollingTracks.forEach(track=>{
+      const originalCards=Array.from(track.children);
+      if(!originalCards.length) return;
+
+      const getCycleWidth=()=>{
+        const first=originalCards[0];
+        const last=originalCards[originalCards.length-1];
+        return last.offsetLeft+last.offsetWidth-first.offsetLeft;
+      };
+
+      const appendCloneSet=()=>{
+        originalCards.forEach(card=>{
+          const clone=card.cloneNode(true);
+          clone.setAttribute('aria-hidden','true');
+          track.appendChild(clone);
+        });
+      };
+
+      appendCloneSet();
+      requestAnimationFrame(()=>{
+        let cycleWidth=getCycleWidth();
+        while(cycleWidth && track.scrollWidth < track.clientWidth+cycleWidth+80){
+          appendCloneSet();
+        }
+      });
+
+      if(reduceMotion) return;
+
+      let paused=false;
+      let frameId;
+      const pause=()=>{paused=true;};
+      const resume=()=>{paused=false;};
+
+      track.addEventListener('mouseenter',pause);
+      track.addEventListener('mouseleave',resume);
+      track.addEventListener('focusin',pause);
+      track.addEventListener('focusout',resume);
+      track.addEventListener('touchstart',pause,{passive:true});
+      track.addEventListener('touchend',resume,{passive:true});
+
+      let lastTime=performance.now();
+      function autoScroll(now){
+        const delta=Math.min(now-lastTime,40);
+        lastTime=now;
+        const resetPoint=getCycleWidth();
+        if(!paused && resetPoint>0 && track.scrollWidth>track.clientWidth){
+          const speed=track.classList.contains('case-track') ? 64 : 72;
+          track.scrollLeft+=speed*(delta/1000);
+          if(track.scrollLeft>=resetPoint){
+            track.scrollLeft=0;
+          }
+        }
+        frameId=requestAnimationFrame(autoScroll);
+      }
+
+      frameId=requestAnimationFrame(autoScroll);
+    });
+
+    let statsStarted=false;
+    const statsSection=document.getElementById('stats');
+    const statsObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && !statsStarted){
+          statsStarted=true;
+
+          document.querySelectorAll('.counter').forEach(counter=>{
+            const target=Number(counter.dataset.target);
+            const duration=1500;
+            const startTime=performance.now();
+
+            function update(now){
+              const progress=Math.min((now-startTime)/duration,1);
+              const eased=1-Math.pow(1-progress,3);
+              const current=Math.floor(target*eased);
+              counter.textContent=current.toLocaleString();
+              if(progress<1){
+                requestAnimationFrame(update);
+              }else{
+                counter.textContent=target.toLocaleString();
+              }
+            }
+
+            requestAnimationFrame(update);
+          });
+
+          const gpa=document.querySelector('.gpa-counter');
+          if(gpa){
+            let frames=['0.3','0.8','1.1','1.5','1~2.0'];
+            let index=0;
+            const timer=setInterval(()=>{
+              gpa.textContent=frames[index];
+              index++;
+              if(index>=frames.length){
+                clearInterval(timer);
+                gpa.textContent='1~2.0';
+              }
+            },260);
+          }
+        }
+      });
+    },{threshold:.35});
+
+    if(statsSection) statsObserver.observe(statsSection);
+  </script>
+</body>
+</html>
