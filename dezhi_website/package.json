@@ -1,0 +1,9 @@
+{
+  "name": "dezhi-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:articles": "node scripts/build-articles.js",
+    "preview": "node scripts/preview-server.js"
+  }
+}
